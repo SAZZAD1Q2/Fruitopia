@@ -1,23 +1,17 @@
-import PropTypes from "prop-types";
-
-const Hello = ({ person }) => {
+ import PropTypes from 'prop-types';
+ const Hello = ({person}) => {
   return (
-    <div><h1>
-      Hello {person.name}. I am {person.age} and My seat number is {person.seatNumber}.I like to have {person.fruits.map((fruit) => fruit)}
-      
-    </h1></div>
-  );
+  <div>
+    <ul style={{ listStyleType: 'none' }}>
+    <h1>Hi, I am {person.name}. You are {person.age} years old. I like {person.fruits.map((fruit) => (<li key = {fruit}>{fruit.emoji}{fruit.name} {fruit.price}</li>))}</h1>
+    </ul>
+  </div>
+  )
 };
 Hello.propTypes = {
-  person: PropTypes.shape({
+  person: PropTypes.shape = ({
     name: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
-    seatNumber: PropTypes.number.isRequired,
-    fruits: PropTypes.string.isRequired,
   })
 }
-
-
- 
-
 export default Hello;
